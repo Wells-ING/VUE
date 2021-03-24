@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>禁用启用</title>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="mydiv">
+			<button v-on:click="change" :disabled="disabled">{{msg}}</button>
+			<button v-text="msg" v-on:click="change" :disabled="disabled"></button>
+			<button type="button" v-on:click="change">{{msg}}</button>
+		</div>
+		<script type="text/javascript">
+			var vue = new Vue({
+				el: '#mydiv',
+				data: {
+					msg: '启用',
+					disabled: true
+				},
+				methods: {
+					change: function() {
+						if(this.msg == '启用') {
+							this.msg = '禁用'
+							this.disabled = false
+							
+						} else if(this.msg == '禁用') {
+							this.msg = '启用'
+							this.disabled = true
+						} else {
+							
+						}
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>

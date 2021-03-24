@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>模版语法</title>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="mydiv">
+			<!-- 1、{{}}表达式 -->
+			<p>{{user.name}}</p>
+			<p>{{msg.toUpperCase()}}</p>
+			<!-- 
+				split()       将字符串分割为数组
+				reverse()     将数组倒序
+				join()        将数组拼接为字符串
+			 -->
+			<p>{{msg.split("").reverse().join("")}}</p>
+			
+			<!-- 2、强制数据绑定 -->
+			<!-- 当元素的解析为表达式时，可以使用强制数据绑定 -->
+			<input type="text" v-bind:value="msg" />
+			<input type="text" :value="msg" />
+			<a :href="href" target="_blank">点击</a>
+			<p v-text="user.name"></p>
+			<!-- 3、绑定事件 -->
+			<button v-on:click="reverseStr">字符串倒序</button>
+			<button v-on:click="test('Hello World')">有参数方法调用</button>
+		</div>
+		<script type="text/javascript">
+			var vue = new Vue({
+				el: '#mydiv',
+				data: {
+					msg: "hello",
+					user: {
+						name: "Wells",
+						age: 20
+					},
+					href: "https://www.csdn.net"
+				},
+				methods: {
+					reverseStr: function() {
+						// this指的是Vue实例对象
+						this.msg = this.msg.split("").reverse().join("")
+					},
+					test: function(str) {
+						alert(str)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

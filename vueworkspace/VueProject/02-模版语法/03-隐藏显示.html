@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>隐藏显示</title>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="mydiv">
+			<button type="button" v-if="isTrue">按钮</button><br /><br />
+			<button type="button" v-on:click="change">{{text}}</button>
+		</div>
+		<script type="text/javascript">
+			var vue = new Vue({
+				el: '#mydiv',
+				data: {
+					isTrue: true,
+					text: '隐藏'
+				}, 
+				methods: {
+					change() {
+						if(this.text == '隐藏') {
+							this.text = '显示'
+							this.isTrue = false
+						} else if(this.text == '显示') {
+							this.text = '隐藏'
+							this.isTrue = true
+						} else {
+							
+						}
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>
