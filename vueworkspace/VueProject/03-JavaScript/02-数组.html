@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 注意：js数组长度是可变的
+			
+			// 创建数组方式1
+			var arr = [10, 20, 30]
+			arr[3] = 40;
+			
+			// 创建数组方式2
+			var arr = new Array(10); // 长度
+			console.log(arr)
+			
+			// 创建数组方式3
+			var arr = new Array(10, 20, 30); // 元素
+			
+			// 创建一个长度为0的数组
+			var arr = []
+			var arr = new Array();
+			
+			// 数组的遍历
+			var arr = [10, 20, 30]
+			
+			// 遍历方式1（最基本）
+			for(var i = 0; i < arr.length; i++) {
+				console.log(arr[i])
+			}
+			
+			// 遍历方式2：for...in
+			for(i in arr) {
+				console.log(arr[i]) // i指下标，arr[i]指元素
+			}
+			
+			// 遍历方式3：for...of
+			for(i of arr) {
+				console.log(i) // i指元素
+			}
+			
+			// 遍历方式4（重要）
+			arr.forEach(function(item, index) {
+				console.log(item) // 遍历的元素
+				console.log(index) // 遍历的下标
+			})
+			
+		</script>
+	</body>
+</html>

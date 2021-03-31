@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 练习：统计包含"a"或"A"的字符串的个数
+			var countryList = ["American", "Greece", "Britain", "Canada", "China", "Egypt"]
+			var count = 0
+			for(element of countryList) {
+				for(i in element) {
+					var letter = element.charAt(i)
+					if(letter == "A" || letter == "a") {
+						count++
+						break;
+					}
+				}
+			}
+			console.log(count)
+		</script>
+	</body>
+</html>

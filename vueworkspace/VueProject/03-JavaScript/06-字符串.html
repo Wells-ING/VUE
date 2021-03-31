@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "VUE.JS"
+			
+			// 1. 获取长度 length
+			console.log(str.length)
+			
+			// 2. 字符串分割 split()
+			var arr = str.split(".")
+			console.log(arr)
+			
+			// 3. 获取'.'下标 indexOf()
+			var index = str.indexOf(".")
+			console.log("\".\"所在下标为：" + index)
+			
+			// 4. 字符串截取（从哪个下标位置开始截取，结束位置下标） substring() substr()
+			var newStr = str.substring(0, 3)
+			console.log(newStr) // 左闭右开
+			var newStr = str.substr(0, 3)
+			console.log(newStr) // 从0位置开始截，截取3位
+			var newStr = str.slice(0, str.indexOf("."))
+			console.log(newStr)
+			
+			// 练习：统计包含"a"或"A"的字符串的个数
+			var countryList = ["American", "Greece", "Britain", "Canada", "China", "Egypt"]
+			var count = 0
+			for(element of countryList) {
+				for(i in element) {
+					var letter = element.charAt(i)
+					if(letter == "A" || letter == "a") {
+						count++
+						break;
+					}
+				}
+			}
+			console.log(count)
+		</script>
+	</body>
+</html>

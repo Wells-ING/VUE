@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="mydiv">
+			
+		</div>
+		<script type="text/javascript">
+			
+			// 定义函数方式1
+			function fun() {
+				
+			}
+			
+			// 问题一：获取当前日期的年、月、日、时、分、秒、星期  打印格式：2021-03-31 11:57:30 星期三
+			function getDate() {
+				var now = new Date()
+				var year = formatDate(now.getFullYear())
+				var month = formatDate(now.getMonth()+1)
+				var day = formatDate(now.getDate())
+				var hour = formatDate(now.getHours())
+				var minute = formatDate(now.getMinutes())
+				var second = formatDate(now.getSeconds())
+				var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+				var formatedDate = new Array(year, month, day).join("-") + " " + new Array(hour, minute, second).join(":") + " " + weeks[now.getDay()]
+				document.getElementById("mydiv").innerHTML = formatedDate
+			}
+			
+			// 格式化日期
+			function formatDate(value) {
+				if(value < 10) {
+					return "0" + value
+				}
+				return value
+			}
+			
+			// 问题二：获得2020年2月15日是星期几
+			var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+			var date = new Date(2020, 1, 15)
+			console.log("2020年2月15日为" + weeks[date.getDay()])
+			
+			// 问题三：已知Date对象，问6天后是星期几
+			
+			// 方法一
+			console.log("六天后是" + weeks[(date.getDay()+6) % 7])
+			
+			// 方法二
+			var date = new Date(date.getFullYear(), date.getMonth(), date.getDate()+6)
+			console.log(weeks[date.getDay()])
+			
+			// 方法三
+			date.setDate(date.getDate()+6)
+			console.log(weeks[date.getDay()])
+			
+			// 定时器
+			setInterval(getDate, 1000)
+		</script>
+	</body>
+</html>

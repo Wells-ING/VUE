@@ -8,30 +8,28 @@
 	<body>
 		<div id="mydiv">
 			<button type="button" v-if="isTrue">按钮</button><br /><br />
-			<button type="button" v-on:click="change">{{text}}</button>
+			<button type="button" @click="change">{{text}}</button>
 		</div>
 		<script type="text/javascript">
 			var vue = new Vue({
 				el: '#mydiv',
+				// 模型Model
 				data: {
 					isTrue: true,
 					text: '隐藏'
-				}, 
+				},
 				methods: {
 					change() {
-						if(this.text == '隐藏') {
+						if(this.isTrue) {
 							this.text = '显示'
 							this.isTrue = false
-						} else if(this.text == '显示') {
+						} else {
 							this.text = '隐藏'
 							this.isTrue = true
-						} else {
-							
 						}
 					}
 				}
 			})
 		</script>
-		
 	</body>
 </html>
