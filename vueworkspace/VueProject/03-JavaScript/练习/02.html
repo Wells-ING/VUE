@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 当年龄大于等于18岁的时候显示图片，否则隐藏图片 -->
+		<div id="mydiv">
+			年龄：{{age}}
+			<button @click="add()">加</button>
+			<button @click="reduce()">减</button>
+			<img src="img/1.jpg" v-if="age >= 18">
+		</div>
+		<script type="text/javascript">
+			var vue = new Vue({
+				el: "#mydiv",
+				data: {
+					age: 18
+				},
+				methods: {
+					add: function() {
+						this.age++
+					},
+					reduce: function() {
+						this.age--
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

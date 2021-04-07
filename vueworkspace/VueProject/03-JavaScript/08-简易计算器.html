@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="mydiv">
+			<div>
+				第一个数：<input type="text" v-model="num1"/>
+			</div>
+			<div>
+				第二个数：<input type="text" v-model="num2"/>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<button @click="add()">+</button>
+			</div>
+			
+			<div>结果：{{result}}</div>
+		</div>
+		
+		<script type="text/javascript">
+			var vue = new Vue({
+				el: "#mydiv",
+				data: {
+					num1 : "",
+					num2 : "",
+					result : ""
+				},
+				methods: {
+					add: function() {
+						// 字符串转成整形：parseInt()  转成浮点型：parseFloat()
+						// 构造方法 new Number()
+						this.result = parseFloat(this.num1) + parseFloat(this.num2)
+						// this.result = new Number(this.num1) + new Number(this.num2)
+						
+						// number型转字符串型： + ""、 toString()、new String()
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

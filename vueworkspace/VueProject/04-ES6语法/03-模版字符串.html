@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "Hello \nWorld"
+			console.log(str)
+			
+			// ES6中模版字符串 ``
+			var str = `Hello World`
+			// 在模版字符串中空格和换行会原样显示
+			var str = `Hello 
+					   World`
+			console.log(str)
+			
+			// 在模版字符串中可以使用${}占位符
+			var name = `Wells`
+			var msg = `Hello, My name is ${name}`
+			console.log(msg)
+			
+			// 模版字符串嵌套
+			var msg = `Hello, ${`My name is ${name}`}`
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 创建JSON对象
+			var student = {
+				name: 'Wells',
+				age: 20,
+				address: '南京',
+				play: function() {
+					console.log("happy...")
+				},
+				course: [
+					{
+						id: 1001,
+						name: 'VUE.JS'
+					},
+					{
+						id: 1002,
+						name: '软件测试'
+					}
+				]
+			}
+			console.log(typeof student)
+			console.log(student.name)
+			student.play()
+			console.log(student.course)
+			
+			// 获得id=1001的课程名
+			console.log(student.course[0].name)  
+			
+			// 遍历获取id=1001的课程名
+			student.course.forEach(function(item, index) {
+				if(item.id == 1001) {
+					console.log(item.name)
+				}
+			})
+			
+			// 将JSON对象转成JSON字符串（重要）
+			var student = JSON.stringify(student)
+			console.log("student类型：" + typeof student)
+			console.log(student)
+			
+			// 创建1个JSON字符串（实际场景这个字符串是从服务器中获取到的）
+			var str = '{"name":"Wells","age":20,"address":"南京","course":[{"id":1001,"name":"VUE.JS"},{"id":1002,"name":"软件测试"}]}'
+			
+			var student = eval("(" + str + ")")
+			console.log(student)
+			
+			// 不是标准字符串
+			var str2 = "{'name':'Wells','age':20,'address':'南京','course':[{'id':1001,'name':'VUE.JS'},{'id':1002,'name':'软件测试'}]}"
+			
+			var student2 = eval("(" + str2 + ")")
+			console.log(student2)
+			
+			// 转义符
+			var str3 = "{\"name\":\"Wells\",\"age\":20,\"address\":\"南京\",\"course\":[{\"id\":1001,\"name\":\"VUE.JS\"},{\"id\":1002,\"name\":\"软件测试\"}]}"
+			// 将JSOn字符串转换为JSON对象
+			var str = JSON.parse(str)
+			// 报错
+			// var str2 = JSON.parse(str2)
+			var str3 = JSON.parse(str3)
+			console.log(str.name)
+			console.log(str3.name)
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

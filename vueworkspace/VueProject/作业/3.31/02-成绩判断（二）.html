@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>成绩判断</title>
-		<script src="../../js/vue.js"></script>
+		<script src="./js/vue.js"></script>
 	</head>
 	<body>
+		<!-- 输入框中的内容是数字、范围0-100 -->
 		<div id="app">
 			<input type="text" v-model="score"/>
 			<span v-if="score >= 80">优秀</span>
@@ -18,6 +19,15 @@
 				el: "#app",
 				data: {
 					score: 90
+				},
+				methods: {
+					limit : function(value) {
+						// if(value < 0 || value > 100) {
+						// 	alert(value)
+						// 	alert("您输入的值小于0或者大于100，请重新输入")
+						// }
+						alert(value)
+					}
 				}
 			})
 		</script>

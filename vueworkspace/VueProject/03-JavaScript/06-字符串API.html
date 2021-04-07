@@ -27,6 +27,12 @@
 			var newStr = str.slice(0, str.indexOf("."))
 			console.log(newStr)
 			
+			// 5. 获得指定下标处字符 charAt()
+			console.log(str.charAt(3))
+			
+			// 6. 
+			
+			
 			// 练习：统计包含"a"或"A"的字符串的个数
 			var countryList = ["American", "Greece", "Britain", "Canada", "China", "Egypt"]
 			var count = 0
@@ -35,11 +41,21 @@
 					var letter = element.charAt(i)
 					if(letter == "A" || letter == "a") {
 						count++
-						break;
+						break
 					}
 				}
 			}
 			console.log(count)
+			
+			// 方法二：forEach()、indexOf()
+			var count = 0
+			countryList.forEach(function(item, index) {
+				if(item.indexOf("a") != -1 || item.indexOf("A") != -1) {
+					count++
+				}
+			})
+			console.log("数组中一共有" + count + "个字符串中包含\"a\"或\"A\"")
+			
 		</script>
 	</body>
 </html>

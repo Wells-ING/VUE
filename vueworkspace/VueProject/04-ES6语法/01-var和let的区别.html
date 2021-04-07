@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			// 1. let声明的变量只在当前所在的代码块有效
+			{
+				var a = 10
+				let b = 10
+			}
+			// console.log(a)  // 10
+			// console.log(b)  // b is not defined 
+			
+			// 2. let定义的变量不能被重复定义
+			{
+				var c = 10
+				let d = 10
+				var c = 10
+				// let d = 10   // 'd' has already been declared
+			}
+			
+			// 练习1
+			for(let i = 0; i < 10; i++) {
+				
+			}
+			
+			// console.log(i)   // 'i' is not defined
+			
+			// 练习2
+			let str = "您好"
+			function fun(flag) {
+				let str = "Hello"
+				if(flag) {
+					str = "Hello World"
+				} 
+				console.log(str)
+			}
+			
+			fun(true)
+			fun(false)
+			
+			// 练习3：循环计数器
+			for(var i = 0; i < 10; i++) {
+				setTimeout(function() {
+					console.log(i)  // 打印出10个10
+				})
+			}
+			
+			for(let i = 0; i < 10; i++) {
+				setTimeout(function() {
+					console.log(i)  // 0～9
+				})
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
